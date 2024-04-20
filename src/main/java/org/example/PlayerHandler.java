@@ -43,6 +43,10 @@ public class PlayerHandler extends Thread {
                 }
                 writer.println("Введите букву k(камень), n(ножницы) или b(бумагу): ");
                 String move = reader.readLine();
+                if (!move.equals("k") && !move.equals("n") && !move.equals("b")) {
+                    writer.println("Некорректный ввод. Попробуйте еще раз.");
+                    continue;
+                }
                 this.move = move;
             }
         } catch (IOException | InterruptedException e) {
